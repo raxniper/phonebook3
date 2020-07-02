@@ -19,8 +19,8 @@ public class PhoneDao {
 
 		private String driver = "oracle.jdbc.driver.OracleDriver";
 		private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		private String id = "phonedb";
-		private String pw = "phonedb";
+		private String id = "webdb";
+		private String pw = "webdb";
 
 		private void getConnection() {
 			try {
