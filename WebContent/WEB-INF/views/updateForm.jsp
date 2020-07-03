@@ -25,7 +25,7 @@
 <body>
     <h1>전화번호 수정</h1>
     <p>아래 항목을 기입하고 "수정" 버튼을 클릭하세요.</p>
-    <form action="/phonebook3/phone/update" method="get">
+    <form action="${pageContext.request.contextPath }/phone/update" method="get">
         <label>이름(name)</label><input type="text" name="name" value="${persVo.name }"><br>
         <label>핸드폰(hp)</label><input type="text" name="hp" value="${persVo.hp }"><br>
         <label>회사(company)</label><input type="text" name="company" value="${persVo.company }"><br>

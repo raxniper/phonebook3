@@ -45,15 +45,15 @@
                 <td>${personVo.company }</td>
             </tr>
             <tr>
-                <td><a href="/phonebook3/phone/updateForm?personId=${personVo.personId }&name=${personVo.name}&hp=${personVo.hp}&company=${personVo.company}">수정</a></td>
-                <td><a href="/phonebook3/phone/delete?personId=${personVo.personId }">삭제</a></td>
+                <td><a href="${pageContext.request.contextPath }/phone/updateForm?personId=${personVo.personId }&name=${personVo.name}&hp=${personVo.hp}&company=${personVo.company}">수정</a></td>
+                <td><a href="${pageContext.request.contextPath }/phone/delete?personId=${personVo.personId }">삭제</a></td>
             </tr>
         </tbody>
     </table>
     <br>
     </c:forEach>
     <p>
-    	<a href="/phonebook3/phone/writeForm">추가번호 등록</a>
+    	<a href="${pageContext.request.contextPath }/phone/writeForm">추가번호 등록</a>
    	</p>
    	<!-- http://localhost:8088/pb2/pbc?action=list -->
 </body>
