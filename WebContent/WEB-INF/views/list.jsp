@@ -21,6 +21,7 @@
 <body>
 <h1>전화번호 리스트</h1>
     <p>입력한 정보 내역입니다.</p>
+    ${pageContext.request.contextPath }
     
 
     <c:forEach items="${pList }" var="personVo" varStatus="status">
