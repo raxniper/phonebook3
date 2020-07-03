@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javaex.dao.PhoneDao;
 import com.javaex.vo.PersonVo;
@@ -81,5 +82,34 @@ public class PhoneController {
 		
 		return "redirect:/phone/list";
 	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public String delete(@RequestParam("personId") int personId) {
+		System.out.println(personId);
 		
+		// Dao 에 넣어주삼
+		PhoneDao phoneDao = new PhoneDao();
+		phoneDao.personDelete(personId);
+		
+		return "redirect:/phone/list";
+	}
+	
+	@RequestMapping(value="/updateForm", method= {RequestMethod.GET, RequestMethod.POST})
+	public String updateForm(Model model, @RequestParam("personId") int personId) {
+		
+		PhoneDao phoneDao = new PhoneDao();
+		PersonVo personVo = phoneDao.getPerson(personId);
+		
+		model.addAttribute("persVo", personVo);
+		
+		return "/WEB-INF/views/updateForm.jsp";
+	}
+	
+	@RequestMapping("/update")
+	public String update(@ModelAttribute PersonVo personVo) {
+		PhoneDao phoneDao = new PhoneDao();
+		phoneDao.personUpdate(personVo);
+		
+		return "redirect:/phone/list";
+	}
 }

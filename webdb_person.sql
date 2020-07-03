@@ -23,3 +23,5 @@ INSERT INTO person VALUES (seq_person_id.nextval, '김현수', '010-5555-5555', 
 
 
 select * from person;
+
+COMMIT;

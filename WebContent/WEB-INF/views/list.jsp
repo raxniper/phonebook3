@@ -44,15 +44,15 @@
                 <td>${personVo.company }</td>
             </tr>
             <tr>
-                <td><a href="">수정</a></td>
-                <td><a href="">삭제</a></td>
+                <td><a href="/phonebook3/phone/updateForm?personId=${personVo.personId }&name=${personVo.name}&hp=${personVo.hp}&company=${personVo.company}">수정</a></td>
+                <td><a href="/phonebook3/phone/delete?personId=${personVo.personId }">삭제</a></td>
             </tr>
         </tbody>
     </table>
     <br>
     </c:forEach>
     <p>
-    	<a href="/pb2/pbc?action=wform">추가번호 등록</a>
+    	<a href="/phonebook3/phone/writeForm">추가번호 등록</a>
    	</p>
    	<!-- http://localhost:8088/pb2/pbc?action=list -->
 </body>
