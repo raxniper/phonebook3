@@ -45,7 +45,8 @@
                 <td>${personVo.company }</td>
             </tr>
             <tr>
-                <td><a href="${pageContext.request.contextPath }/phone/updateForm?personId=${personVo.personId }&name=${personVo.name}&hp=${personVo.hp}&company=${personVo.company}">수정</a></td>
+                <!-- <td><a href="${pageContext.request.contextPath }/phone/updateForm?personId=${personVo.personId }&name=${personVo.name}&hp=${personVo.hp}&company=${personVo.company}">수정</a></td> -->
+                <td><a href="${pageContext.request.contextPath }/phone/updateForm/${personVo.personId }">수정</a></td>
                 <td><a href="${pageContext.request.contextPath }/phone/delete?personId=${personVo.personId }">삭제</a></td>
             </tr>
         </tbody>

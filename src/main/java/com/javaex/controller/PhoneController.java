@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,14 +43,15 @@ public class PhoneController {
 		// 값을 담아보자.
 		model.addAttribute("pList", pList);
 		
-		return "/WEB-INF/views/list.jsp";
+		// return "/WEB-INF/views/list.jsp";
+		return "list";
 	}
 	
 
 	
 	@RequestMapping(value="/writeForm", method= {RequestMethod.GET, RequestMethod.POST})
 	public String writeForm() {
-		return "/WEB-INF/views/writeForm.jsp";
+		return "writeForm";
 	}
 	
 //	@RequestMapping(value="/write", method=RequestMethod.GET)
@@ -94,15 +96,26 @@ public class PhoneController {
 		return "redirect:/phone/list";
 	}
 	
-	@RequestMapping(value="/updateForm", method= {RequestMethod.GET, RequestMethod.POST})
-	public String updateForm(Model model, @RequestParam("personId") int personId) {
+//	@RequestMapping(value="/updateForm", method= {RequestMethod.GET, RequestMethod.POST})
+//	public String updateForm(Model model, @RequestParam("personId") int personId) {
+//		
+//		PhoneDao phoneDao = new PhoneDao();
+//		PersonVo personVo = phoneDao.getPerson(personId);
+//		
+//		model.addAttribute("persVo", personVo);
+//		
+//		return "/WEB-INF/views/updateForm.jsp";
+//	}
+	
+	@RequestMapping(value="/updateForm/{no}", method= {RequestMethod.GET, RequestMethod.POST})
+	public String updateForm(Model model, @PathVariable("no") int personId) {
 		
 		PhoneDao phoneDao = new PhoneDao();
 		PersonVo personVo = phoneDao.getPerson(personId);
 		
 		model.addAttribute("persVo", personVo);
 		
-		return "/WEB-INF/views/updateForm.jsp";
+		return "updateForm";
 	}
 	
 	@RequestMapping("/update")

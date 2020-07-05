@@ -32,6 +32,6 @@
         <input type="hidden" name="personId" value="${persVo.personId}">
         <button type="submit">수정</button>
     </form>
-    <a href="./list">리스트 바로가기</a>
+    <a href="${pageContext.request.contextPath }/phone/list">리스트 바로가기</a>
 </body>
 </html>
