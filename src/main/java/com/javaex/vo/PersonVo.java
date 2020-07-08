@@ -2,11 +2,15 @@ package com.javaex.vo;
 
 public class PersonVo {
 
+	
+	// field
 	private int personId;
 	private String name;
 	private String hp;
 	private String company;
 	
+	
+	// constructor
 	public PersonVo() {
 		
 	}
@@ -24,6 +28,7 @@ public class PersonVo {
 		this.company = company;
 	}
 
+	// getter, setter
 	public int getPersonId() {
 		return personId;
 	}
@@ -56,6 +61,7 @@ public class PersonVo {
 		this.company = company;
 	}
 
+	// method toString
 	@Override
 	public String toString() {
 		return "PersonVo [personId=" + personId + ", name=" + name + ", hp=" + hp + ", company=" + company + "]";

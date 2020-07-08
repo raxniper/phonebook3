@@ -22,6 +22,8 @@ public class PhoneDao {
 		private String id = "webdb";
 		private String pw = "webdb";
 
+		
+		// 연결 관리
 		private void getConnection() {
 			try {
 				// 1. JDBC 드라이버 (Oracle) 로딩
@@ -38,8 +40,9 @@ public class PhoneDao {
 			}
 		}
 
+		
+		// 자원정리
 		public void close() {
-			// 5. 자원정리
 			try {
 				if (rs != null) {
 					rs.close();

@@ -21,7 +21,10 @@ INSERT INTO person VALUES (seq_person_id.nextval, '기안84', '010-4444-4444', '
 INSERT INTO person VALUES (seq_person_id.nextval, '김현수', '010-5555-5555', '02-1111-1111' );
 
 
-
-select * from person;
+select  person_id,
+        name,
+        hp,
+        company
+from person;
 
 COMMIT;
