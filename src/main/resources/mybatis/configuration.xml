@@ -3,6 +3,7 @@
 
 <configuration>
     <typeAliases>
+    	<typeAlias alias="PersonVo" type="com.javaex.vo.PersonVo" />	<!-- 경로가  type인 애를 alias인 애로 변경하겠다.-->
     </typeAliases>
 
     <mappers>
